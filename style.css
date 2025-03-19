@@ -6,6 +6,9 @@ body {
     background-color: #0d0d0d;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -62,12 +65,10 @@ nav ul li a:hover {
     background: rgba(0, 0, 0, 0.6);
     top: 0;
     left: 0;
-    z-index: 0; 
 }
 
 .hero h1 {
     font-size: 2.5em;
-    z-index: 1;
     position: relative;
 }
 
@@ -78,7 +79,6 @@ nav ul li a:hover {
 .hero p {
     font-size: 1.2em;
     margin: 10px 0;
-    z-index: 1;
     position: relative;
 }
 
@@ -93,7 +93,7 @@ nav ul li a:hover {
     border-radius: 5px;
     transition: 0.3s;
     position: relative;
-    z-index: 1; /* Place le bouton au-dessus de l'overlay */
+    z-index: 1;
 }
 
 .btn:hover {
@@ -144,7 +144,7 @@ nav ul li a:hover {
     padding: 10px;
     width: 100%;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .contact button {
@@ -152,18 +152,20 @@ nav ul li a:hover {
     color: white;
     padding: 10px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    display: block;          /* Ajoute cette ligne */
+    margin: 0 auto;          /* Et cette ligne pour centrer */
+    text-align: center;      
 }
 
-.contact button:hover {
-    background: #3a5d8e;
-}
 
 /* Footer */
 footer {
     background: #111;
     padding: 20px;
+    margin-top: auto;
 }
 
 footer img {
@@ -174,162 +176,11 @@ footer p {
     margin-top: 10px;
 }
 
-/* Section Offres */
-.offres {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.offres h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #3a5d8e;
-}
-
-.offres-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.offre {
-    background: #222;
-    padding: 20px;
-    border-radius: 15px;
-    width: 280px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.offre img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.offre h3 {
-    margin: 10px 0;
-    color: white;
-}
-
-.offre p {
-    font-size: 0.9em;
-    color: #aaa;
-}
-
-.prix {
-    display: block;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #3a5d8e;
-    margin: 10px 0;
-}
-
-.offre .btn {
-    display: inline-block;
-    padding: 10px;
-    background: #3a5d8e;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.offre .btn:hover {
-    background: #2b4c7e;
-}
-
-.offre:hover {
-    transform: scale(1.05);
-}
-
-/* Conteneur principal */
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-}
-
-/* Zone de présentation */
-.presentation {
-    width: 50%;
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.presentation img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.pres-content {
-    padding: 10px;
-}
-
-.presentation h2 {
-    color: #3a5d8e;
-}
-
-.presentation p {
-    color: #ccc;
-    margin: 10px 0;
-}
-
-.presentation .prix {
-    font-size: 1.5em;
-}
-
-/* Section Offres */
-.offres-container {
-    width: 45%;
-    display: flex;
-    justify-content: center;
-}
-
-.offre {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-    width: 280px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.offre img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.offre h3 {
-    margin: 10px 0;
-    color: white;
-}
-
-.prix {
-    display: block;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #3a5d8e;
-    margin: 10px 0;
-}
-
-/* Effet zoom */
-.offre:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 15px rgba(58, 93, 142, 0.7);
-}
 
 #pres-img {
     width: 300px;
     height: 200px;
-    object-fit: cover; /* Coupe l'image pour qu'elle garde une bonne forme */
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -339,7 +190,6 @@ footer p {
     justify-content: space-between;
     align-items: center;
     padding: 50px;
-    position: relative;
 }
 
 /* Zone de présentation cachée par défaut */
@@ -349,23 +199,15 @@ footer p {
     padding: 20px;
     border-radius: 10px;
     text-align: left;
-    display: none; /* Caché par défaut */
+    display: none;
     flex-direction: column;
     align-items: center;
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    transition: opacity 0.3s ease-in-out;
 }
 
-/* Apparition de la fenêtre quand on survole la voiture */
-.offre:hover ~ .presentation {
-    display: flex;
-    opacity: 1;
-}
-
-/* Image et contenu dans la présentation */
 .presentation img {
     width: 100%;
     max-width: 400px;
@@ -390,6 +232,8 @@ footer p {
     font-size: 1.5em;
 }
 
+
+
 .card {
     border-radius: 16px;
     margin: 0 auto;
@@ -398,46 +242,66 @@ footer p {
     min-height: 500px;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    background-image: url(https://cdn.pixabay.com/photo/2019/04/20/11/39/japan-4141578_960_720.jpg);
+    background-image: url('brabus-face.jpg'); /* Remplace par ton image */
     background-size: cover;
-  }
-
-  .info {
     position: relative;
-    width: 100%;
-    height: 500px;
-    background-color: #fff;
-    transform: translateY(100%)
-      translateY(-88px)
-      translateZ(0);
-    transition: transform 0.3s ease-out;
-  }
-  .info:before {
-    z-index: -1;
-    display: block; position: absolute;
-    content: ' ';
-    width: 100%; height: 100%;
-    overflow: hidden;
-    background-image: url(https://cdn.pixabay.com/photo/2019/04/20/11/39/japan-4141578_960_720.jpg);
-    filter: blur(10px);
-    background-size: cover;
-    opacity: 0.25;
-    transform: translateY(-100%)
-      translateY(88px)
-      translateZ(0);
-    transition: transform 0.3s ease-out;
-  }
-  .title {
-  margin: 0;
-  padding: 24px;
-  font-size: 40px;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.87);
 }
 
-.description {
-  margin: 0;
-  padding: 0 24px 24px;
-  font-size: 18px;
-  line-height: 1.5;
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    color: transparent; /* Rendre le texte invisible par défaut */
+    transform: translateY(100%) translateY(-88px) translateZ(0);
+    transition: transform 0.3s ease-out, color 0.3s ease-out;
 }
+
+.info:before {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url('brabus\ face.jpg');
+    filter: blur(0px);
+    background-size: cover;
+    opacity: 0.20;
+    transform: translateY(-100%) translateY(88px) translateZ(0);
+    transition: transform 0.3s ease-out;
+}
+
+.card:hover .info {
+    color: white; /* Le texte devient visible quand on survole */
+    transform: translateY(0) translateZ(0);
+}
+
+.card:hover .info:before {
+    opacity: 0; /* Cache l'image de fond en survol */
+}
+/* Amélioration de la description */
+h3 {
+    font-size: 1.8em;
+    color: #3a5d8e;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #ddd;
+    line-height: 2.5;
+    font-weight: 500;
+}
+
+.prix {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #3a5d8e;
+    display: block;
+    margin-top: 10px;
+}
+
