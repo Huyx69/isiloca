@@ -122,10 +122,17 @@ nav ul li a:hover {
     transition: 0.3s;
 }
 
+
 .service:hover {
     background: #3a5d8e;
     color: #111;
 }
+
+
+.service:hover h3 {
+    color: white;
+}
+
 
 /* Contact */
 .contact {
@@ -235,9 +242,8 @@ footer p {
 }
 
 .cards-container {
-    display: flex;
-    flex-wrap: wrap; /* Si tu as plus de cartes, elles passeront à la ligne suivante */
-    justify-content: center; /* Centrer les cartes horizontalement */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 20px; /* Espacement entre les cartes */
     padding-top: 50px; /* Ajuste cette valeur selon tes besoins */
 }
@@ -270,6 +276,10 @@ footer p {
     color: transparent; /* Rendre le texte invisible par défaut */
     transform: translateY(100%) translateY(-88px) translateZ(0);
     transition: transform 0.3s ease-out, color 0.3s ease-out;
+}
+
+.info p {
+    line-height: 30px;
 }
 
 .info:before {
@@ -323,6 +333,10 @@ footer p {
     transition: transform 0.3s ease-out, color 0.3s ease-out;
 }
 
+.info1 p {
+    line-height: 30px;
+}
+
 .info1:before {
     z-index: -1;
     display: block;
@@ -347,6 +361,112 @@ footer p {
 .card1:hover .info1:before {
     opacity: 0; /* Cache l'image de fond en survol */
 }
+.card2 {
+    border-radius: 16px;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 500px;
+    max-width: 100%;
+    min-height: 500px;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background-size: cover;
+    position: relative;
+}
+
+.info2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    color: transparent; /* Rendre le texte invisible par défaut */
+    transform: translateY(100%) translateY(-88px) translateZ(0);
+    transition: transform 0.3s ease-out, color 0.3s ease-out;
+}
+
+.info2 p {
+    line-height: 30px;
+}
+
+.info2:before {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url('c3.jpg');
+    filter: blur(0px);
+    background-size: cover;
+    opacity: 0.20;
+    transform: translateY(-100%) translateY(88px) translateZ(0);
+    transition: transform 0.3s ease-out;
+}
+
+.card2:hover .info2 {
+    color: white; /* Le texte devient visible quand on survole */
+    transform: translateY(0) translateZ(0);
+}
+
+.card2:hover .info2:before {
+    opacity: 0; /* Cache l'image de fond en survol */
+}
+.card3 {
+    border-radius: 16px;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 500px;
+    max-width: 100%;
+    min-height: 500px;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background-size: cover;
+    position: relative;
+}
+
+.info3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    color: transparent; /* Rendre le texte invisible par défaut */
+    transform: translateY(100%) translateY(-88px) translateZ(0);
+    transition: transform 0.3s ease-out, color 0.3s ease-out;
+}
+
+.info3 p {
+    line-height: 30px;
+}
+
+.info3:before {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url('multiplat.jpg');
+    filter: blur(0px);
+    background-size: cover;
+    opacity: 0.20;
+    transform: translateY(-100%) translateY(88px) translateZ(0);
+    transition: transform 0.3s ease-out;
+}
+
+.card3:hover .info3 {
+    color: white; /* Le texte devient visible quand on survole */
+    transform: translateY(0) translateZ(0);
+}
+
+.card3:hover .info3:before {
+    opacity: 0; /* Cache l'image de fond en survol */
+}
 /* Amélioration de la description */
 h3 {
     font-size: 1.8em;
@@ -369,3 +489,325 @@ p {
     margin-top: 10px;
 }
 
+/* 📌 Section Réservation */
+.reservation {
+    padding: 50px 20px;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+.reservation h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3a5d8e;
+}
+
+.reservation h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    color: #3a5d8e;
+}
+
+/* 📋 Formulaire */
+form {
+    max-width: 500px;
+    margin: auto;
+    background: #222;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.form-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #aaa;
+}
+
+input, select {
+    width: 97%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+button.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #3a5d8e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+    cursor: pointer;
+    border: none;
+}
+
+button.btn:hover {
+    background: #2b4c7e;
+    transform: scale(1.05);
+}
+
+/* 🚗 Section Circuit */
+.circuit {
+    padding: 50px 20px;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+.circuit h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3a5d8e;
+}
+
+.circuit p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.circuits-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.circuit-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.circuit-card img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.circuit-card h3 {
+    margin: 10px 0;
+    color: white;
+}
+
+.circuit-card p {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.circuit-card .prix {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3a5d8e;
+    margin: 10px 0;
+}
+
+.circuit-card .btn {
+    display: inline-block;
+    padding: 10px;
+    background: #3a5d8e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.circuit-card .btn:hover {
+    background: #2b4c7e;
+}
+
+.circuit-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(58, 93, 142, 0.7);
+}
+
+/* 📞 Section Contact */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3a5d8e;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.contact form {
+    max-width: 400px;
+    margin: auto;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    margin: 10px 0;
+}
+
+.contact button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: #3a5d8e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+    cursor: pointer;
+    border: none;
+}
+
+.contact button:hover {
+    background: #2b4c7e;
+    transform: scale(1.05);
+}
+
+/* 📞 Section Contact */
+.contact-page {
+    padding: 50px 20px;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+.contact-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3a5d8e;
+}
+
+.contact-page p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* 📩 Conteneur principal */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* 📍 Coordonnées */
+.contact-info {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    text-align: left;
+}
+
+.contact-info h2,
+.contact-info h3 {
+    color: #3a5d8e;
+}
+
+.contact-info p {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #ddd;
+}
+
+/* 🗺️ Carte Google Maps */
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* 📋 Formulaire */
+.contact-form {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    text-align: left;
+}
+
+.contact-form h2 {
+    color: #3a5d8e;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    margin: 10px 0;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+.contact-form button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: #3a5d8e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-form button:hover {
+    background: #2b4c7e;
+    transform: scale(1.05);
+}
+
+/* 🛠️ Responsive */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+}

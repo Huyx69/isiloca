@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Isi____2_-removebg-preview.png">
+    <title>Réservation - Isi·loca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Isi____2_-removebg-preview.png" alt="Logo Isi·loca">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="offres.html">voitures</a></li>
+                <li><a href="circuit.html">circuit</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="reservation">
+        <h1>Réservez votre tour de circuit</h1>
+        <img src="porsche telephone.jpg" style="float: left; margin: 10px 15px 10px 100px; border-radius: 16px" height="700px"width="400px">
+        <img src="voiture telephone.jpg" style="float: right; margin: 10px 100px 10px 100px; border-radius: 16px;" height="700px"width="400px">
+     
+        <form action="paiement.html" method="POST">
+            
+            
+            <!-- Informations personnelles -->
+            <div class="form-group">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicule">circuit choisi</label>
+                <select id="vehicule" name="vehicule" required>
+                    <option value="voitures">veuiller choisir votre circuit</option>
+                    <option value="Ferrari">circuit de Monaco</option>
+                    <option value="brabus">circuit Paul Ricard</option>
+                    <option value="brabus">circuit Nürburgring</option>
+                </select>
+            </div>
+
+            <!-- Dates de réservation -->
+            <div class="form-group">
+                <label for="date-debut">Date</label>
+                <input type="date" id="date-debut" name="date-debut" required>
+            </div>
+
+            <!-- Paiement -->
+            <h2>Détails de paiement</h2>
+            <div class="form-group">
+                <label for="carte-numero">Numéro de carte</label>
+                <input type="text" id="carte-numero" name="carte-numero" placeholder="1234 5678 9101 1121" required>
+            </div>
+
+            <div class="form-group">
+                <label for="carte-exp">Date d'expiration</label>
+                <input type="month" id="carte-exp" name="carte-exp" required>
+            </div>
+
+            <div class="form-group">
+                <label for="carte-cvv">CVV</label>
+                <input type="text" id="carte-cvv" name="carte-cvv" placeholder="123" required>
+            </div>
+
+            <!-- Bouton de réservation -->
+            <button type="submit" class="btn">Réserver maintenant</button>
+
+        </form>
+    </section>
+    
+
+    <footer>
+        <img src="Isi____2_-removebg-preview.png" alt="Logo Isi·loca">
+        <p>© 2025 Isi·loca - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
