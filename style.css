@@ -74,7 +74,7 @@ nav ul li a:hover {
 }
 
 .hero span {
-    color: #3a5d8e;
+    color: #537bb4;
 }
 
 .hero p {
@@ -579,7 +579,7 @@ button.btn:hover {
 
 .circuit p {
     font-size: 1.2em;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .circuits-container {
@@ -609,6 +609,7 @@ button.btn:hover {
 }
 
 .circuit-card p {
+    margin-top: -10px;
     font-size: 0.9em;
     color: #aaa;
 }
@@ -663,7 +664,7 @@ button.btn:hover {
     max-width: 400px;
     margin: auto;
     background: #222;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
 }
 
@@ -810,4 +811,20 @@ button.btn:hover {
     .contact-form {
         width: 100%;
     }
+}
+
+#weather-monaco, #weather-paul-ricard, #weather-nurburgring {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
+    margin-top: -40px;
+}
+
+#weather-monaco p, #weather-paul-ricard p, #weather-nurburgring p {
+    margin: 5px 0;
+    line-height: 1.2;
 }

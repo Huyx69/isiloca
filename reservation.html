@@ -75,7 +75,7 @@
 
             <div class="form-group">
                 <label for="carte-cvv">CVV</label>
-                <input type="text" id="carte-cvv" name="carte-cvv" placeholder="123" required>
+                <input type="number" id="carte-cvv" name="carte-cvv" placeholder="123" oninput="this.value=this.value.slice(0,3)">
             </div>
 
             <!-- Bouton de réservation -->
