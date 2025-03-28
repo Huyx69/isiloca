@@ -52,12 +52,18 @@
     </section>
     <section class="contact">
         <h2>Contactez-nous</h2>
-        <form>
-            <input type="text" placeholder="Nom" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Votre message" required></textarea>
+        <form action="https://formspree.io/f/xjkyeypj" method="POST">
+            <label>
+              Votre email:
+              <input type="email" name="email" placeholder="Entrez votre email" required>
+            </label>
+            <label>
+              Votre message:
+              <textarea name="message" placeholder="Écrivez votre message ici" required></textarea>
+            </label>
             <button type="submit">Envoyer</button>
-        </form>
+          </form>
+          
     </section>
     <footer>
         <img src="Isi____2_-removebg-preview.png" alt="Logo Isicar">

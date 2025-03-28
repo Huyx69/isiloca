@@ -22,13 +22,13 @@
             </ul>
         </nav>
     </header>
+
     <section class="reservation">
         <h1>Réservez votre véhicule</h1>
-        <img src="porsche telephone.jpg" style="float: left; margin: 50px 15px 10px 100px; border-radius: 16px" height="700px"width="400px">
-        <img src="voiture telephone.jpg" style="float: right; margin: 50px 100px 10px 100px; border-radius: 16px;" height="700px"width="400px">
+        <img src="porsche telephone.jpg" style="float: left; margin: 50px 15px 10px 100px; border-radius: 16px" height="700px" width="400px">
+        <img src="voiture telephone.jpg" style="float: right; margin: 50px 100px 10px 100px; border-radius: 16px;" height="700px" width="400px">
      
-        <form action="paiement.html" method="POST">
-            
+        <form id="reservationForm" action="paiement.html" method="POST">
             
             <!-- Informations personnelles -->
             <div class="form-group">
@@ -44,11 +44,11 @@
             <div class="form-group">
                 <label for="vehicule">Véhicule choisi</label>
                 <select id="vehicule" name="vehicule" required>
-                    <option value="voitures">veuiller choisir votre voiture</option>
-                    <option value="Ferrari">Ferrari 812 superfast</option>
-                    <option value="brabus">Brabus 1000 Rocket GTS</option>
-                    <option value="C3">C3 picasso</option>
-                    <option value="Multipla">Muktipla</option>
+                    <option value="voitures">Veuiller choisir votre voiture</option>
+                    <option value="Ferrari">Ferrari 812 Superfast</option>
+                    <option value="Brabus">Brabus 1000 Rocket GTS</option>
+                    <option value="C3">C3 Picasso</option>
+                    <option value="Multipla">Multipla</option>
                 </select>
             </div>
 
@@ -65,36 +65,65 @@
 
             <!-- Paiement -->
             <h2>Détails de paiement</h2>
-            <div class="form-group">
-                <label for="carte-numero">Numéro de carte</label>
-                <input type="text" id="card" inputmode="numeric" maxlength="16" placeholder="1234 5678 9101 1121" required>
 
-                <script>
-                document.getElementById("card").addEventListener("input", function (e) {
-                this.value = this.value.replace(/\D/g, '');//foce les numéros de carte
-                });
-                </script>
+            <!-- PayPal Button Container -->
+            <div id="paypal-button-container"></div>
 
-            </div>
+            <script src="https://www.paypal.com/sdk/js?client-id=AaMBamAFi2ZlRlspGQHG87oRB9KwGGf_JGAT4vhK9_dVSuZG8__diwpg6Vfbt14yUQWWd85VW64NpcKl"></script>
+            <script>
+                // Fonction de calcul du prix
+                function calculerPrix() {
+                    const vehicule = document.getElementById("vehicule").value;
+                    const dateDebut = new Date(document.getElementById("date-debut").value);
+                    const dateFin = new Date(document.getElementById("date-fin").value);
+                    const duree = Math.ceil((dateFin - dateDebut) / (1000 * 3600 * 24)); // calcul du nombre de jours
 
-            <div class="form-group">
-                <label for="carte-exp">Date d'expiration</label>
-                <input type="month" id="carte-exp" name="carte-exp" required>
-            </div>
+                    let prixParJour = 0;
+                    switch (vehicule) {
+                        case 'Ferrari':
+                            prixParJour = 430; // prix pour Ferrari
+                            break;
+                        case 'Brabus':
+                            prixParJour = 460; // prix pour Brabus
+                            break;
+                        case 'C3':
+                            prixParJour = 25; // prix pour C3
+                            break;
+                        case 'Multipla':
+                            prixParJour = 1750; // prix pour Multipla
+                            break;
+                        default:
+                            prixParJour = 0;
+                    }
 
-            <!-- forcer le cvv -->
-            <div class="form-group">
-                <label for="carte-cvv">CVV</label>
-                <input type="number" id="carte-cvv" name="carte-cvv" placeholder="123" oninput="this.value=this.value.slice(0,3)">
-            </div>
+                    return prixParJour * duree;
+                }
 
-            <!-- Bouton de réservation -->
+                // PayPal bouton avec prix dynamique
+                paypal.Buttons({
+                    createOrder: function(data, actions) {
+                        const totalPrix = calculerPrix();
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: totalPrix.toFixed(2) // Montant dynamique calculé
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            alert('Paiement réussi par ' + details.payer.name.given_name);
+                        });
+                    }
+                }).render('#paypal-button-container');
+            </script>
+
             <button type="submit" class="btn">Réserver maintenant</button>
 
         </form>
     </section>
     
-
     <footer>
         <img src="Isi____2_-removebg-preview.png" alt="Logo Isi·loca">
         <p>© 2025 Isi·loca - Tous droits réservés</p>
@@ -102,3 +131,4 @@
 
 </body>
 </html>
+

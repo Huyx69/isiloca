@@ -51,12 +51,17 @@
             <!-- Formulaire de contact -->
             <div class="contact-form">
                 <h2>Envoyez-nous un message</h2>
-                <form>
-                    <input type="text" placeholder="Nom" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Votre message" required></textarea>
-                    <button type="submit" class="btn">Envoyer</button>
-                </form>
+                <form action="https://formspree.io/f/xjkyeypj" method="POST">
+                    <label>
+                      Votre email:
+                      <input type="email" name="email" placeholder="Entrez votre email" required>
+                    </label>
+                    <label>
+                      Votre message:
+                      <textarea name="message" placeholder="Écrivez votre message ici" required></textarea>
+                    </label>
+                    <button type="submit">Envoyer</button>
+                  </form>
             </div>
         </div>
     </section>
