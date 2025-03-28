@@ -1,4 +1,3 @@
-/* Styles généraux */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -11,7 +10,6 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -46,7 +44,6 @@ nav ul li a:hover {
     color:#3a5d8e;
 }
 
-/* Section Hero */
 .hero {
     background: url('dsc04821.jpg') no-repeat center/cover;
     height: 80vh;
@@ -101,7 +98,6 @@ nav ul li a:hover {
     background: #2b4c7e; 
 }
 
-/* Services */
 .services {
     padding: 50px 20px;
     background: #111;
@@ -134,7 +130,6 @@ nav ul li a:hover {
 }
 
 
-/* Contact */
 .contact {
     padding: 50px 20px;
 }
@@ -163,13 +158,12 @@ nav ul li a:hover {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    display: block;          /* Ajoute cette ligne */
-    margin: 0 auto;          /* Et cette ligne pour centrer */
+    display: block;          
+    margin: 0 auto;          
     text-align: center;      
 }
 
 
-/* Footer */
 footer {
     background: #111;
     padding: 15px;
@@ -193,7 +187,6 @@ footer p {
     border-radius: 10px;
 }
 
-/* Conteneur principal */
 .container {
     display: flex;
     justify-content: space-between;
@@ -201,7 +194,6 @@ footer p {
     padding: 50px;
 }
 
-/* Zone de présentation cachée par défaut */
 .presentation {
     width: 50%;
     background: #111;
@@ -244,13 +236,12 @@ footer p {
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    gap: 20px; /* Espacement entre les cartes */
-    padding-top: 50px; /* Ajuste cette valeur selon tes besoins */
+    gap: 20px;
+    padding-top: 50px; 
 }
 
 .card, .card1 {
-    /* Autres styles pour .card et .card1 restent inchangés */
-    margin: 0; /* Enlève la marge qui empêche les cartes de s'aligner */
+    margin: 0; /
 }
 
 .card {
@@ -273,7 +264,7 @@ footer p {
     width: 100%;
     height: 100%;
     background-color: #111;
-    color: transparent; /* Rendre le texte invisible par défaut */
+    color: transparent;  
     transform: translateY(100%) translateY(-88px) translateZ(0);
     transition: transform 0.3s ease-out, color 0.3s ease-out;
 }
@@ -354,12 +345,12 @@ footer p {
 }
 
 .card1:hover .info1 {
-    color: white; /* Le texte devient visible quand on survole */
+    color: white; 
     transform: translateY(0) translateZ(0);
 }
 
 .card1:hover .info1:before {
-    opacity: 0; /* Cache l'image de fond en survol */
+    opacity: 0; 
 }
 .card2 {
     border-radius: 16px;
@@ -381,7 +372,7 @@ footer p {
     width: 100%;
     height: 100%;
     background-color: #111;
-    color: transparent; /* Rendre le texte invisible par défaut */
+    color: transparent; 
     transform: translateY(100%) translateY(-88px) translateZ(0);
     transition: transform 0.3s ease-out, color 0.3s ease-out;
 }
@@ -407,12 +398,12 @@ footer p {
 }
 
 .card2:hover .info2 {
-    color: white; /* Le texte devient visible quand on survole */
+    color: white; 
     transform: translateY(0) translateZ(0);
 }
 
 .card2:hover .info2:before {
-    opacity: 0; /* Cache l'image de fond en survol */
+    opacity: 0; 
 }
 .card3 {
     border-radius: 16px;
@@ -434,7 +425,7 @@ footer p {
     width: 100%;
     height: 100%;
     background-color: #111;
-    color: transparent; /* Rendre le texte invisible par défaut */
+    color: transparent; 
     transform: translateY(100%) translateY(-88px) translateZ(0);
     transition: transform 0.3s ease-out, color 0.3s ease-out;
 }
@@ -460,14 +451,14 @@ footer p {
 }
 
 .card3:hover .info3 {
-    color: white; /* Le texte devient visible quand on survole */
+    color: white; 
     transform: translateY(0) translateZ(0);
 }
 
 .card3:hover .info3:before {
-    opacity: 0; /* Cache l'image de fond en survol */
+    opacity: 0; 
 }
-/* Amélioration de la description */
+
 h3 {
     font-size: 1.8em;
     color: #3a5d8e;
@@ -489,7 +480,7 @@ p {
     margin-top: 10px;
 }
 
-/* 📌 Section Réservation */
+/* Section Réservation */
 .reservation {
     padding: 50px 20px;
     text-align: center;
@@ -509,7 +500,7 @@ p {
     color: #3a5d8e;
 }
 
-/* 📋 Formulaire */
+
 form {
     max-width: 500px;
     margin: auto;
@@ -563,7 +554,7 @@ button.btn:hover {
     transform: scale(1.05);
 }
 
-/* 🚗 Section Circuit */
+
 .circuit {
     padding: 50px 20px;
     text-align: center;
@@ -641,7 +632,6 @@ button.btn:hover {
     box-shadow: 0px 0px 15px rgba(58, 93, 142, 0.7);
 }
 
-/* 📞 Section Contact */
 .contact {
     padding: 50px 20px;
     text-align: center;
@@ -698,7 +688,6 @@ button.btn:hover {
     transform: scale(1.05);
 }
 
-/* 📞 Section Contact */
 .contact-page {
     padding: 50px 20px;
     text-align: center;
@@ -717,7 +706,6 @@ button.btn:hover {
     margin-bottom: 30px;
 }
 
-/* 📩 Conteneur principal */
 .contact-container {
     display: flex;
     justify-content: center;
@@ -727,7 +715,6 @@ button.btn:hover {
     margin: auto;
 }
 
-/* 📍 Coordonnées */
 .contact-info {
     background: #222;
     padding: 20px;
@@ -747,13 +734,12 @@ button.btn:hover {
     color: #ddd;
 }
 
-/* 🗺️ Carte Google Maps */
+/*  Carte Google Maps */
 .map-container {
     border-radius: 10px;
     overflow: hidden;
 }
 
-/* 📋 Formulaire */
 .contact-form {
     background: #222;
     padding: 20px;
@@ -800,7 +786,6 @@ button.btn:hover {
     transform: scale(1.05);
 }
 
-/* 🛠️ Responsive */
 @media screen and (max-width: 768px) {
     .contact-container {
         flex-direction: column;

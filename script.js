@@ -4,7 +4,7 @@ async function getWeatherData(lat, lon, locationName, elementId) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        
+        //api météo open-meteo.com
         document.getElementById(elementId).innerHTML = `
             <p><strong>🌡 :</strong> ${data.current.temperature_2m}°C</p>
             <p><strong>🌧 :</strong> ${data.current.precipitation}mm</p>
@@ -24,3 +24,4 @@ const locations = [
 document.addEventListener("DOMContentLoaded", () => {
     locations.forEach(location => getWeatherData(location.lat, location.lon, location.name, location.elementId));
 });
+
